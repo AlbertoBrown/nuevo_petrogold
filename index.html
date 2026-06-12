@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetroGold – Inicio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== TOP HEADER ===== -->
+  <header class="top-header">
+    <div class="header-inner">
+
+      <div class="header-left">
+        <a href="index.html" class="header-logo">
+          <img src="Img/logo_petrogold_negro_sin_fondo.png" alt="PetroGold" />
+        </a>
+        <div class="header-tabs">
+          <button class="tab active">Particulares</button>
+          <button class="tab">Empresas</button>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <!-- Search -->
+        <button class="icon-btn" aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <!-- User -->
+        <button class="icon-btn" aria-label="Mi cuenta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </button>
+        <!-- Cart -->
+        <button class="icon-btn" aria-label="Carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+        </button>
+        <span class="header-divider"></span>
+        <a href="tienda.html" class="tienda-link">Tienda Online</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===== MAIN NAV ===== -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html" class="active">Inicio</a></li>
+
+      <li class="has-dropdown">
+        <a href="gasolineras.html">Gasolineras
+          <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <ul class="dropdown">
+          <li><a href="gasolineras.html">Todas las gasolineras</a></li>
+        </ul>
+      </li>
+
+      <li class="has-dropdown">
+        <a href="combustibles.html">Combustibles
+          <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <ul class="dropdown">
+          <li><a href="combustibles.html">Tipos de combustible</a></li>
+        </ul>
+      </li>
+
+      <li><a href="lavado.html">Lavado</a></li>
+
+      <li class="has-dropdown">
+        <a href="quienes-somos.html">Quiénes somos
+          <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <ul class="dropdown">
+          <li><a href="quienes-somos.html">La empresa</a></li>
+        </ul>
+      </li>
+
+      <li><a href="impulso-al-deporte.html">Impulso al deporte</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+
+    <!-- ===== HERO SLIDER ===== -->
+    <section class="hero-slider" id="heroSlider">
+
+      <!-- Slide 1 -->
+      <div class="slide active" style="background-image: url('Img/gasolinera_hero.png')">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <span class="slide-label">SERVICIO</span>
+          <h1 class="slide-title">La única gasolinera<br>siempre abierta para ti,<br>las 24 horas del día</h1>
+          <a href="gasolineras.html" class="slide-btn">Saber más <span class="btn-arrow">›</span></a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide" style="background-image: url('Img/calidad_hero.png')">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <span class="slide-label">CALIDAD</span>
+          <h1 class="slide-title">Con nuestro combustible premium microfiltrado<br>ahorrarás hasta un <span class="slide-gold">10%</span> en cada repostaje.</h1>
+          <a href="combustibles.html" class="slide-btn">Saber más <span class="btn-arrow">›</span></a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide" style="background-image: url('Img/franquiciate_hero.png')">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <span class="slide-label">FRANQUÍCIATE</span>
+          <h1 class="slide-title">Invierte en una marca<br>preparada para crecer<br>contigo.</h1>
+          <p class="slide-subtitle">Accede a un modelo de negocio innovador<br>con tecnología 24 horas, soporte continuo<br>y una inversión adaptada a tus necesidades.</p>
+          <a href="quienes-somos.html" class="slide-btn">Saber más <span class="btn-arrow">›</span></a>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="slider-controls">
+        <button class="slider-btn prev" id="heroPrev" aria-label="Anterior">‹</button>
+        <button class="slider-btn next" id="heroNext" aria-label="Siguiente">›</button>
+        <span class="slider-counter"><span id="heroCurrent">1</span> / <span id="heroTotal">3</span></span>
+      </div>
+
+    </section>
+
+    <!-- ===== FEATURES SECTION ===== -->
+    <section class="features-section">
+      <div class="features-inner">
+
+        <div class="features-header">
+          <span class="features-label">¿POR QUÉ ELEGIR PETROGOLD?</span>
+          <h2 class="features-title">Más que una gasolinera,<br>una nueva forma de repostar.</h2>
+        </div>
+
+        <div class="features-grid">
+
+          <!-- Card 1 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="Img/logo_ahorro.png" alt="Ahorro" />
+            </div>
+            <h3 class="feature-title gold-line">Hasta un 10%<br>de ahorro</h3>
+            <p class="feature-text">Combustible premium microfiltrado diseñado para ayudarte a ahorrar hasta un 10% en cada repostaje.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="Img/logo_combustible.png" alt="Combustible premium" />
+            </div>
+            <h3 class="feature-title navy-line">Combustible<br>premium</h3>
+            <p class="feature-text">Carburantes tratados con tecnología avanzada para ofrecer el máximo rendimiento y protección del motor.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="Img/logo_tiempo.png" alt="Servicio 24 horas" />
+            </div>
+            <h3 class="feature-title navy-line">Servicio<br>24 horas</h3>
+            <p class="feature-text">Abiertos los 365 días del año para que puedas repostar cuando y como lo necesites.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img src="Img/logo_lavadero.png" alt="Lavado premium" />
+            </div>
+            <h3 class="feature-title navy-line">Lavado<br>premium</h3>
+            <p class="feature-text">Centros de lavado con la mejor tecnología para cuidar tu vehículo por dentro y por fuera.</p>
+          </div>
+
+        </div>
+
+        <div class="features-cta">
+          <a href="gasolineras.html" class="features-btn">Descubre todas nuestras ventajas <span class="btn-arrow">›</span></a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
