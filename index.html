@@ -57,23 +57,7 @@
         <button class="hamburger" id="menuToggle" aria-label="Menú">
           <span></span><span></span><span></span>
         </button>
-        <button class="icon-btn" aria-label="Buscar">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
-        <button class="icon-btn" aria-label="Mi cuenta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-          </svg>
-        </button>
-        <button class="icon-btn" aria-label="Carrito">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-          </svg>
-        </button>
-        <a href="tienda.html" class="tienda-btn">Tienda Online</a>
+        <a href="franquicias.html" class="tienda-btn">Franquíciate</a>
       </div>
 
     </div>
@@ -89,6 +73,7 @@
           <div class="slide-content">
             <span class="slide-label">SERVICIO</span>
             <h1 class="slide-title">La única gasolinera<br>siempre abierta para ti,<br>las 24 horas del día</h1>
+            <p class="slide-subtitle">Abierta los 365 días del año para que puedas repostar cuando quieras, como quieras y sin interrupciones. Porque tu movilidad no entiende de horarios.</p>
             <a href="gasolineras.html" class="slide-btn">Saber más <span class="btn-arrow">›</span></a>
           </div>
         </div>
@@ -250,18 +235,7 @@
           </iframe>
         </div>
 
-        <!-- Right: gallery -->
-        <div class="petrogold-location-gallery">
-          <div class="petrogold-location-img-wrap">
-            <img src="Img/ubicacion_1.png" alt="Estación PetroGold 1" />
-          </div>
-          <div class="petrogold-location-img-wrap">
-            <img src="Img/ubicacion_2.png" alt="Estación PetroGold 2" />
-          </div>
-          <div class="petrogold-location-img-wrap">
-            <img src="Img/ubicacion_3.png" alt="Estación PetroGold 3" />
-          </div>
-        </div>
+        <!-- Right: gallery (removed) -->
 
       </div>
     </section>
@@ -275,7 +249,7 @@
             La energía que impulsa el <span class="sport-gold">deporte</span>
           </h2>
           <p class="sport-text">
-            En PetroGold entendemos el deporte como una fuente de inspiración y un reflejo de los valores que nos representan. Conoce cómo apoyamos a deportistas, equipos y competiciones a llevar su espíritu de superación cada vez más lejos.
+           Conoce cómo apoyamos a deportistas, equipos y competiciones a llevar su espíritu de superación cada vez más lejos.
           </p>
           <a href="impulso-al-deporte.html" class="sport-btn">
             Descubre nuestra historia
@@ -291,19 +265,16 @@
     <section class="reviews-section">
       <div class="reviews-inner">
 
-        <div class="reviews-header">
-          <span class="reviews-label">OPINIONES</span>
-          <h2 class="reviews-title">Lo que opinan nuestros clientes</h2>
-          <span class="reviews-title-line"></span>
-          <p class="reviews-subtitle">La satisfacción de nuestros clientes es nuestra mejor garantía.<br>Descubre lo que opinan sobre nosotros.</p>
-        </div>
+        <div class="reviews-layout">
 
-        <div class="reviews-track-wrapper">
-          <button class="reviews-arrow reviews-prev" id="reviewsPrev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
+          <!-- Left: carousel -->
+          <div class="reviews-carousel-col">
+            <div class="reviews-track-wrapper">
+              <button class="reviews-arrow reviews-prev" id="reviewsPrev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
 
-          <div class="reviews-track" id="reviewsTrack">
+              <div class="reviews-track" id="reviewsTrack">
 
             <!-- 1 -->
             <div class="review-card">
@@ -463,10 +434,21 @@
 
           </div><!-- /.reviews-track -->
 
-          <button class="reviews-arrow reviews-next" id="reviewsNext" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div><!-- /.reviews-track-wrapper -->
+              <button class="reviews-arrow reviews-next" id="reviewsNext" aria-label="Siguiente">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div><!-- /.reviews-track-wrapper -->
+          </div><!-- /.reviews-carousel-col -->
+
+          <!-- Right: header block -->
+          <div class="reviews-header">
+            <span class="reviews-label">OPINIONES</span>
+            <h2 class="reviews-title">Lo que opinan nuestros clientes</h2>
+            <span class="reviews-title-line"></span>
+            <p class="reviews-subtitle">La satisfacción de nuestros clientes es nuestra mejor garantía. Descubre lo que opinan sobre nosotros.</p>
+          </div>
+
+        </div><!-- /.reviews-layout -->
 
         <!-- CTA strip -->
         <div class="reviews-cta">
@@ -478,7 +460,7 @@
             <p class="reviews-cta-sub">Tu opinión nos ayuda a seguir mejorando cada día.</p>
           </div>
           <a href="#" class="reviews-cta-btn" target="_blank" rel="noopener">Escribir una opinión →</a>
-          <img src="Img/trustpilot.png" alt="Trustpilot" class="reviews-cta-trustpilot" />
+
         </div>
 
       </div>

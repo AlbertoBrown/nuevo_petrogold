@@ -150,9 +150,7 @@ const THRESHOLD = 30;
         topHeader.classList.toggle('scrolled', scrolled);
         if (mainNav) mainNav.classList.toggle('scrolled', scrolled);
         if (logoImg) {
-          logoImg.src = scrolled
-            ? 'Img/logo_petrogold_negro_sin_fondo.png'
-            : 'Img/logo_petrogold_sin_fondo.png';
+          logoImg.src = 'Img/logo_petrogold_sin_fondo.png';
         }
       } else {
         const headerH = topHeader.offsetHeight + (mainNav ? mainNav.offsetHeight : 0);
