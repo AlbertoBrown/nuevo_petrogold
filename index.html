@@ -6,123 +6,116 @@
   <title>PetroGold – Inicio</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="hero-page">
 
-  <!-- ===== TOP HEADER ===== -->
+  <!-- ===== HERO WRAPPER (header + nav overlay + slider) ===== -->
+  <div class="hero-wrapper">
+
+  <!-- ===== SINGLE HEADER BAR ===== -->
   <header class="top-header">
     <div class="header-inner">
 
-      <div class="header-left">
-        <a href="index.html" class="header-logo">
-          <img src="Img/logo_petrogold_negro_sin_fondo.png" alt="PetroGold" />
-        </a>
-        <div class="header-tabs">
-          <button class="tab active">Particulares</button>
-          <button class="tab">Empresas</button>
-        </div>
-      </div>
+      <a href="index.html" class="header-logo">
+        <img src="Img/logo_petrogold_sin_fondo.png" alt="PetroGold" id="siteLogoImg" />
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li class="has-dropdown">
+            <a href="gasolineras.html">Gasolineras
+              <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="gasolineras.html">Todas las gasolineras</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="combustibles.html">Combustibles
+              <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="combustibles.html">Tipos de combustible</a></li>
+            </ul>
+          </li>
+          <li><a href="lavado.html">Lavado</a></li>
+          <li class="has-dropdown">
+            <a href="quienes-somos.html">Quiénes somos
+              <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="quienes-somos.html">La empresa</a></li>
+            </ul>
+          </li>
+          <li><a href="impulso-al-deporte.html">Impulso al deporte</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
 
       <div class="header-right">
-        <!-- Search -->
+        <button class="hamburger" id="menuToggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
         <button class="icon-btn" aria-label="Buscar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
           </svg>
         </button>
-        <!-- User -->
         <button class="icon-btn" aria-label="Mi cuenta">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
           </svg>
         </button>
-        <!-- Cart -->
         <button class="icon-btn" aria-label="Carrito">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
           </svg>
         </button>
-        <span class="header-divider"></span>
-        <a href="tienda.html" class="tienda-link">Tienda Online</a>
+        <a href="tienda.html" class="tienda-btn">Tienda Online</a>
       </div>
 
     </div>
   </header>
 
-  <!-- ===== MAIN NAV ===== -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html" class="active">Inicio</a></li>
-
-      <li class="has-dropdown">
-        <a href="gasolineras.html">Gasolineras
-          <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-        <ul class="dropdown">
-          <li><a href="gasolineras.html">Todas las gasolineras</a></li>
-        </ul>
-      </li>
-
-      <li class="has-dropdown">
-        <a href="combustibles.html">Combustibles
-          <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-        <ul class="dropdown">
-          <li><a href="combustibles.html">Tipos de combustible</a></li>
-        </ul>
-      </li>
-
-      <li><a href="lavado.html">Lavado</a></li>
-
-      <li class="has-dropdown">
-        <a href="quienes-somos.html">Quiénes somos
-          <svg class="nav-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-        <ul class="dropdown">
-          <li><a href="quienes-somos.html">La empresa</a></li>
-        </ul>
-      </li>
-
-      <li><a href="impulso-al-deporte.html">Impulso al deporte</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
-
-  <!-- ===== MAIN CONTENT ===== -->
-  <main>
-
-    <!-- ===== HERO SLIDER ===== -->
-    <section class="hero-slider" id="heroSlider">
+  <!-- ===== HERO SLIDER ===== -->
+  <section class="hero-slider" id="heroSlider">
 
       <!-- Slide 1 -->
       <div class="slide active" style="background-image: url('Img/gasolinera_hero.png')">
         <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <span class="slide-label">SERVICIO</span>
-          <h1 class="slide-title">La única gasolinera<br>siempre abierta para ti,<br>las 24 horas del día</h1>
-          <a href="gasolineras.html" class="slide-btn">Saber más <span class="btn-arrow">›</span></a>
+        <div class="hero-content-wrapper">
+          <div class="slide-content">
+            <span class="slide-label">SERVICIO</span>
+            <h1 class="slide-title">La única gasolinera<br>siempre abierta para ti,<br>las 24 horas del día</h1>
+            <a href="gasolineras.html" class="slide-btn">Saber más <span class="btn-arrow">›</span></a>
+          </div>
         </div>
       </div>
 
       <!-- Slide 2 -->
       <div class="slide" style="background-image: url('Img/calidad_hero.png')">
         <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <span class="slide-label">CALIDAD</span>
-          <h1 class="slide-title">Con nuestro combustible premium microfiltrado<br>ahorrarás hasta un <span class="slide-gold">10%</span> en cada repostaje.</h1>
-          <a href="combustibles.html" class="slide-btn">Saber más <span class="btn-arrow">›</span></a>
+        <div class="hero-content-wrapper">
+          <div class="slide-content">
+            <span class="slide-label">CALIDAD</span>
+            <h1 class="slide-title">Con nuestro combustible premium microfiltrado<br>ahorrarás hasta un <span class="slide-gold">10%</span> en cada repostaje.</h1>
+            <a href="combustibles.html" class="slide-btn">Saber más <span class="btn-arrow">›</span></a>
+          </div>
         </div>
       </div>
 
       <!-- Slide 3 -->
       <div class="slide" style="background-image: url('Img/franquiciate_hero.png')">
         <div class="slide-overlay"></div>
-        <div class="slide-content">
-          <span class="slide-label">FRANQUÍCIATE</span>
-          <h1 class="slide-title">Invierte en una marca<br>preparada para crecer<br>contigo.</h1>
-          <p class="slide-subtitle">Accede a un modelo de negocio innovador<br>con tecnología 24 horas, soporte continuo<br>y una inversión adaptada a tus necesidades.</p>
-          <a href="quienes-somos.html" class="slide-btn">Saber más <span class="btn-arrow">›</span></a>
+        <div class="hero-content-wrapper">
+          <div class="slide-content">
+            <span class="slide-label">FRANQUÍCIATE</span>
+            <h1 class="slide-title">Invierte en una marca<br>preparada para crecer<br>contigo.</h1>
+            <p class="slide-subtitle">Accede a un modelo de negocio innovador<br>con tecnología 24 horas, soporte continuo<br>y una inversión adaptada a tus necesidades.</p>
+            <a href="quienes-somos.html" class="slide-btn">Saber más <span class="btn-arrow">›</span></a>
+          </div>
         </div>
       </div>
 
@@ -133,65 +126,436 @@
         <span class="slider-counter"><span id="heroCurrent">1</span> / <span id="heroTotal">3</span></span>
       </div>
 
-    </section>
+  </section>
 
-    <!-- ===== FEATURES SECTION ===== -->
-    <section class="features-section">
-      <div class="features-inner">
+  </div><!-- /.hero-wrapper -->
 
-        <div class="features-header">
-          <span class="features-label">¿POR QUÉ ELEGIR PETROGOLD?</span>
-          <h2 class="features-title">Más que una gasolinera,<br>una nueva forma de repostar.</h2>
+  <main>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services-section">
+      <div class="services-inner">
+
+        <div class="services-header">
+          <span class="services-label">NUESTROS SERVICIOS</span>
         </div>
 
-        <div class="features-grid">
+        <div class="services-grid">
 
           <!-- Card 1 -->
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img src="Img/logo_ahorro.png" alt="Ahorro" />
+          <div class="service-card">
+            <div class="service-img">
+              <img src="Img/24h.png" alt="Gasolinera 24 horas" />
             </div>
-            <h3 class="feature-title gold-line">Hasta un 10%<br>de ahorro</h3>
-            <p class="feature-text">Combustible premium microfiltrado diseñado para ayudarte a ahorrar hasta un 10% en cada repostaje.</p>
+            <div class="service-body">
+              <h3 class="service-title">Gasolinera<br><span class="service-title-gold">24 horas</span></h3>
+              <span class="service-line"></span>
+              <a href="gasolineras.html" class="service-link">Saber más <span>&#8594;</span></a>
+            </div>
           </div>
 
           <!-- Card 2 -->
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img src="Img/logo_combustible.png" alt="Combustible premium" />
+          <div class="service-card">
+            <div class="service-img">
+              <img src="Img/lavadero.png" alt="Centros de lavado premium" />
             </div>
-            <h3 class="feature-title navy-line">Combustible<br>premium</h3>
-            <p class="feature-text">Carburantes tratados con tecnología avanzada para ofrecer el máximo rendimiento y protección del motor.</p>
+            <div class="service-body">
+              <h3 class="service-title">Centros de<br><span class="service-title-gold">lavado premium</span></h3>
+              <span class="service-line"></span>
+              <a href="lavado.html" class="service-link">Saber más <span>&#8594;</span></a>
+            </div>
           </div>
 
           <!-- Card 3 -->
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img src="Img/logo_tiempo.png" alt="Servicio 24 horas" />
+          <div class="service-card">
+            <div class="service-img">
+              <img src="Img/combustible.png" alt="Combustible premium" />
             </div>
-            <h3 class="feature-title navy-line">Servicio<br>24 horas</h3>
-            <p class="feature-text">Abiertos los 365 días del año para que puedas repostar cuando y como lo necesites.</p>
+            <div class="service-body">
+              <h3 class="service-title">Combustible<br><span class="service-title-gold">premium</span></h3>
+              <span class="service-line"></span>
+              <a href="combustibles.html" class="service-link">Saber más <span>&#8594;</span></a>
+            </div>
           </div>
 
           <!-- Card 4 -->
-          <div class="feature-card">
-            <div class="feature-icon">
-              <img src="Img/logo_lavadero.png" alt="Lavado premium" />
+          <div class="service-card">
+            <div class="service-img">
+              <img src="Img/franquiciate_hero.png" alt="Franquicias PetroGold" />
             </div>
-            <h3 class="feature-title navy-line">Lavado<br>premium</h3>
-            <p class="feature-text">Centros de lavado con la mejor tecnología para cuidar tu vehículo por dentro y por fuera.</p>
+            <div class="service-body">
+              <h3 class="service-title">Franquicias<br><span class="service-title-gold">PetroGold</span></h3>
+              <span class="service-line"></span>
+              <a href="quienes-somos.html" class="service-link">Saber más <span>&#8594;</span></a>
+            </div>
           </div>
 
         </div>
+      </div>
+    </section>
 
-        <div class="features-cta">
-          <a href="gasolineras.html" class="features-btn">Descubre todas nuestras ventajas <span class="btn-arrow">›</span></a>
+    <!-- ===== FRANQUICIAS SECTION ===== -->
+    <section class="franchise-section">
+      <div class="franchise-overlay"></div>
+      <div class="franchise-content">
+        <span class="franchise-label">FRANQUICIAS</span>
+        <h2 class="franchise-title">Invierte en una marca<br>preparada para crecer contigo.</h2>
+        <p class="franchise-text">Conviértete en dueño de tu propia estación de servicio y forma parte de una marca moderna, innovadora y preparada para el futuro. </p>
+        <a href="quienes-somos.html" class="franchise-btn">Solicita más información <span class="franchise-arrow">→</span></a>
+      </div>
+    </section>
+
+    <!-- ===== LOCATION SECTION ===== -->
+    <section class="petrogold-location-section">
+      <div class="petrogold-location-wrap">
+
+        <!-- Left: text -->
+        <div class="petrogold-location-left">
+          <span class="petrogold-location-deco"></span>
+          <h2 class="petrogold-location-title">Estamos más cerca de ti<br>de lo que imaginas.</h2>
+          <div class="petrogold-location-stations">
+            <div class="petrogold-location-item">
+              <span class="petrogold-location-pin">
+                <svg viewBox="0 0 24 24" fill="#0A2E73" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </span>
+              <div>
+                <p class="petrogold-location-name">PetroGold Cáceres</p>
+                <p class="petrogold-location-addr">Pl. Juan Ramón Jiménez, s/n,<br>Norte, 10004 Cáceres</p>
+              </div>
+            </div>
+            <div class="petrogold-location-item">
+              <span class="petrogold-location-pin">
+                <svg viewBox="0 0 24 24" fill="#0A2E73" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </span>
+              <div>
+                <p class="petrogold-location-name">PetroGold Mérida</p>
+                <p class="petrogold-location-addr">Av. de Felipe VI, 1E,<br>06800 Mérida, Badajoz</p>
+              </div>
+            </div>
+          </div>
+          <a href="gasolineras.html" class="petrogold-location-btn">Ver estaciones de servicio <span class="petrogold-location-arrow">›</span></a>
+        </div>
+
+        <!-- Center: map -->
+        <div class="petrogold-location-map">
+          <span class="petrogold-location-map-label">ENCUENTRA TU ESTACIÓN</span>
+          <iframe
+            title="Estaciones PetroGold"
+            src="https://maps.google.com/maps?q=PetroGold&hl=es&z=9&output=embed"
+            width="100%" height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Right: gallery -->
+        <div class="petrogold-location-gallery">
+          <div class="petrogold-location-img-wrap">
+            <img src="Img/ubicacion_1.png" alt="Estación PetroGold 1" />
+          </div>
+          <div class="petrogold-location-img-wrap">
+            <img src="Img/ubicacion_2.png" alt="Estación PetroGold 2" />
+          </div>
+          <div class="petrogold-location-img-wrap">
+            <img src="Img/ubicacion_3.png" alt="Estación PetroGold 3" />
+          </div>
         </div>
 
       </div>
     </section>
 
+    <!-- ===== SPORT SECTION ===== -->
+    <section class="sport-section">
+      <div class="sport-overlay"></div>
+      <div class="sport-content">
+        <div class="sport-content-inner">
+          <h2 class="sport-title">
+            La energía que impulsa el <span class="sport-gold">deporte</span>
+          </h2>
+          <p class="sport-text">
+            En PetroGold entendemos el deporte como una fuente de inspiración y un reflejo de los valores que nos representan. Conoce cómo apoyamos a deportistas, equipos y competiciones a llevar su espíritu de superación cada vez más lejos.
+          </p>
+          <a href="impulso-al-deporte.html" class="sport-btn">
+            Descubre nuestra historia
+            <span class="sport-btn-arrow">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" width="16" height="16"><path d="M4 10h12M11 4l6 6-6 6"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OPINIONES SECTION ===== -->
+    <section class="reviews-section">
+      <div class="reviews-inner">
+
+        <div class="reviews-header">
+          <span class="reviews-label">OPINIONES</span>
+          <h2 class="reviews-title">Lo que opinan nuestros clientes</h2>
+          <span class="reviews-title-line"></span>
+          <p class="reviews-subtitle">La satisfacción de nuestros clientes es nuestra mejor garantía.<br>Descubre lo que opinan sobre nosotros.</p>
+        </div>
+
+        <div class="reviews-track-wrapper">
+          <button class="reviews-arrow reviews-prev" id="reviewsPrev" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+
+          <div class="reviews-track" id="reviewsTrack">
+
+            <!-- 1 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_1.png" alt="Miriam Verdejo" class="review-avatar" />
+                <div>
+                  <p class="review-name">Miriam Verdejo</p>
+                  <p class="review-meta">Local Guide &middot; 36 reseñas &middot; 3 fotos</p>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">“La única gasolinera que no deja manchas, nunca huele mal, perfecto mantenimiento, gente agradable. De lo único que me quejaría es de que cierran los lavaderos por la noche pero estaría bien. 100% recomendable, precios asequibles.”</p>
+            </div>
+
+            <!-- 2 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_2.png" alt="Carla Martínez" class="review-avatar" />
+                <div>
+                  <p class="review-name">Carla Martínez</p>
+                  <p class="review-meta">13 reseñas &middot; 7 fotos</p>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">“El empleado súper atento y agradable. Hemos usado el baño y repostado a un precio muy económico. Baños limpios y servicio de vaciado para autocaravanas. ¡Recomiendo!”</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_3.png" alt="Luis Zabalegui García" class="review-avatar" />
+                <div>
+                  <p class="review-name">Luis Zabalegui García</p>
+                  <p class="review-meta">Local Guide &middot; 12 reseñas &middot; 38 fotos</p>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">“El mejor sitio para lavar tu vehículo, más tiempo y más presión por el mismo euro. La atención del personal estupenda, son muy simpáticos. La gasolina suele tener el mejor precio de Cáceres.”</p>
+            </div>
+
+            <!-- 4 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_4.png" alt="Roci Martínez" class="review-avatar" />
+                <div>
+                  <p class="review-name">Roci Martínez</p>
+                  <p class="review-meta">3 reseñas &middot; 1 foto</p>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">“El túnel de lavado es espectacular, te deja el coche como nuevo, sus trabajadores súper amables. El gasoil es muy bueno, es con el que más kilómetros hago, siempre que puedo allí estoy, el ahorro se nota mucho.”</p>
+            </div>
+
+            <!-- 5 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_5.png" alt="Carlos Hogado" class="review-avatar" />
+                <div>
+                  <p class="review-name">Carlos Hogado</p>
+                  <p class="review-meta">1 reseña &middot; 0 fotos</p>
+                  <div class="review-stars">★★★★☆</div>
+                </div>
+              </div>
+              <p class="review-text">“Por más vueltas que doy a Petrogold, siempre voy. Si es verdad que sus instalaciones y personal no son perfectos, pero casi. Cuando tengan GLP ya lo bordan. ¡Saludos!”</p>
+            </div>
+
+            <!-- 6 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_6.png" alt="Carmen G" class="review-avatar" />
+                <div>
+                  <p class="review-name">Carmen G</p>
+                  <p class="review-meta">1 reseña &middot; 0 fotos</p>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">“Combustible muy bueno al mejor precio. Suelo echar bastante allí, el coche no me ha dado ningún problema, y lo mejor la amabilidad de sus trabajadores, en especial una chica llamada Elena.”</p>
+            </div>
+
+            <!-- 7 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_7.png" alt="Encarni Barquero" class="review-avatar" />
+                <div>
+                  <p class="review-name">Encarni Barquero</p>
+                  <p class="review-meta">Local Guide &middot; 33 reseñas &middot; 8 fotos</p>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">“Diesel de primera, llevo años repostando y nunca he tenido ningún problema en mi vehículo. Precio más barato que las demás. Atención 100%.”</p>
+            </div>
+
+            <!-- 8 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_8.png" alt="Esther CM" class="review-avatar" />
+                <div>
+                  <p class="review-name">Esther CM</p>
+                  <p class="review-meta">Local Guide &middot; 146 reseñas &middot; 309 fotos</p>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">“Es auto-repostaje, pero la atención del personal es estupenda, son amables y serviciales y tienen precios bajos. El lavadero estupendo y puedes inflar los neumáticos gratis.”</p>
+            </div>
+
+            <!-- 9 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_9.png" alt="Samuel" class="review-avatar" />
+                <div>
+                  <p class="review-name">Samuel</p>
+                  <p class="review-meta">Local Guide &middot; 540 reseñas &middot; 493 fotos</p>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">“Grandes profesionales y buenos precios. Buenas instalaciones.”</p>
+            </div>
+
+            <!-- 10 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_10.png" alt="Ruben Rubio Corrales" class="review-avatar" />
+                <div>
+                  <p class="review-name">Ruben Rubio Corrales</p>
+                  <p class="review-meta">Local Guide &middot; 8 reseñas</p>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">“Buenos precios. Después de años repostando allí, puedo decir que el combustible es de calidad. El lavadero, muy bien. Y el trato es excepcional. Recomendable 100%.”</p>
+            </div>
+
+            <!-- 11 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_11.png" alt="Patricia Perales Barahona" class="review-avatar" />
+                <div>
+                  <p class="review-name">Patricia Perales Barahona</p>
+                  <p class="review-meta">Local Guide &middot; 60 reseñas &middot; 15 fotos</p>
+                  <div class="review-stars">★★★★☆</div>
+                </div>
+              </div>
+              <p class="review-text">"Me gusta ir a esta gasolinera por su precio. También solemos ir a lavar los coches ya que con un par de euros dejas el coche bastante decente, tiene buenos productos y el agua dura bastante."</p>
+            </div>
+
+            <!-- 12 -->
+            <div class="review-card">
+              <div class="review-top">
+                <img src="Img/avatar_12.png" alt="Lidia Salmerón" class="review-avatar" />
+                <div>
+                  <p class="review-name">Lidia Salmerón</p>
+                  <p class="review-meta">Local Guide &middot; 155 reseñas &middot; 384 fotos</p>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text">"Gasolina más barata que en otros sitios, también tiene para lavar el coche y aspirarlo."</p>
+            </div>
+
+          </div><!-- /.reviews-track -->
+
+          <button class="reviews-arrow reviews-next" id="reviewsNext" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div><!-- /.reviews-track-wrapper -->
+
+        <!-- CTA strip -->
+        <div class="reviews-cta">
+          <div class="reviews-cta-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="reviews-cta-text">
+            <p class="reviews-cta-title">¿Has estado en PetroGold?</p>
+            <p class="reviews-cta-sub">Tu opinión nos ayuda a seguir mejorando cada día.</p>
+          </div>
+          <a href="#" class="reviews-cta-btn" target="_blank" rel="noopener">Escribir una opinión →</a>
+          <img src="Img/trustpilot.png" alt="Trustpilot" class="reviews-cta-trustpilot" />
+        </div>
+
+      </div>
+    </section>
+
+
   </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <!-- Col 1: Logo + tagline + redes -->
+      <div class="footer-brand">
+        <img src="Img/logo_petrogold_sin_fondo.png" alt="PetroGold" class="footer-logo" />
+        <p class="footer-tagline">Calidad, servicio y tecnología<br>al servicio de tu movimiento.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook" class="footer-social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="footer-social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="footer-social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok" class="footer-social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Enlaces rápidos -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">ENLACES RÁPIDOS</h4>
+        <ul class="footer-links">
+          <li><a href="gasolineras.html">Gasolineras</a></li>
+          <li><a href="combustibles.html">Combustibles</a></li>
+          <li><a href="lavado.html">Lavado</a></li>
+          <li><a href="franquicias.html">Franquicias</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Sobre PetroGold -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">SOBRE PETROGOLD</h4>
+        <ul class="footer-links">
+          <li><a href="quienes-somos.html">Quiénes somos</a></li>
+          <li><a href="#">Trabajo con nosotros</a></li>
+          <li><a href="#">Sala de prensa</a></li>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Política de cookies</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Newsletter -->
+      <div class="footer-col footer-newsletter-col">
+        <h4 class="footer-col-title">SUSCRÍBETE A NUESTRA NEWSLETTER</h4>
+        <p class="footer-newsletter-desc">Recibe nuestras promociones<br>y novedades.</p>
+        <form class="footer-newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="Tu email" class="footer-newsletter-input" />
+          <button type="submit" class="footer-newsletter-btn" aria-label="Suscribirse">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 PetroGold. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
