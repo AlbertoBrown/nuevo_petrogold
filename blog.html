@@ -1,0 +1,985 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetroGold – Blog</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Fuente Manrope -->
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap)" rel="stylesheet">
+
+  <style>
+    :root {
+      --pg-black: #111111;
+      --pg-text: #4f5560;
+      --pg-muted: #7b828c;
+      --pg-bg: #ffffff;
+      --pg-white: #ffffff;
+      --pg-line: #e9e4da;
+      --pg-gold: #a77a00;
+      --pg-gold-soft: #eeae00;
+      --pg-title: #000000;
+      --pg-green: #1e008b;
+      --pg-green-hover: #0012b1;
+      --shadow-soft: 0 18px 40px rgba(17, 17, 17, 0.08);
+      --shadow-card: 0 10px 24px rgba(17, 17, 17, 0.08);
+      --radius-xl: 26px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --container: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      color: var(--pg-text);
+      background: linear-gradient(180deg, #fcfbf8 0%, #f6f4ef 100%);
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .blog-shell {
+      width: min(100% - 40px, var(--container));
+      margin: 0 auto;
+    }
+
+    .blog-main {
+      padding: 48px 0 90px;
+    }
+
+    .blog-hero {
+      padding: 24px 0 52px;
+    }
+
+    .blog-hero-box {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(199, 178, 122, 0.18), transparent 32%),
+        radial-gradient(circle at right bottom, rgba(158, 185, 187, 0.16), transparent 28%),
+        linear-gradient(135deg, #fffdf8 0%, #f5f1e8 100%);
+      border: 1px solid rgba(199, 178, 122, 0.18);
+      border-radius: 32px;
+      padding: 54px 56px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .blog-hero-box::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -60px;
+      top: -60px;
+      background: rgba(199, 178, 122, 0.12);
+      border-radius: 50%;
+      filter: blur(4px);
+    }
+
+    .blog-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--pg-gold);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .blog-kicker::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--pg-gold);
+    }
+
+    .blog-hero h1 {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 4vw, 4.3rem);
+      line-height: 1.02;
+      color: var(--pg-black);
+      max-width: 820px;
+      margin-bottom: 18px;
+    }
+
+    .blog-hero p {
+      max-width: 760px;
+      font-size: 1.08rem;
+      color: var(--pg-text);
+    }
+
+    .blog-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 0 0 36px;
+      padding: 18px 22px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(199, 178, 122, 0.16);
+      border-radius: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .blog-toolbar-left h2 {
+      font-size: 1.25rem;
+      color: var(--pg-black);
+      margin-bottom: 4px;
+      font-weight: 800;
+    }
+
+    .blog-toolbar-left p {
+      font-size: 0.96rem;
+      color: var(--pg-muted);
+    }
+
+    .blog-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .blog-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--pg-white);
+      border: 1px solid var(--pg-line);
+      color: var(--pg-black);
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .blog-tag:hover,
+    .blog-tag.active {
+      background: var(--pg-black);
+      color: var(--pg-white);
+      border-color: var(--pg-black);
+    }
+
+    .featured-posts {
+      display: grid;
+      gap: 34px;
+      margin-bottom: 70px;
+    }
+
+    .post-featured {
+      display: grid;
+      grid-template-columns: 1.08fr 1fr;
+      gap: 42px;
+      align-items: center;
+      background: var(--pg-white);
+      border-radius: var(--radius-xl);
+      padding: 34px;
+      border: 1px solid rgba(199, 178, 122, 0.14);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .post-featured:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 42px rgba(17, 17, 17, 0.11);
+    }
+
+    .post-featured.reverse {
+      grid-template-columns: 1fr 1.08fr;
+    }
+
+    .post-featured.reverse .post-media {
+      order: 2;
+    }
+
+    .post-featured.reverse .post-content {
+      order: 1;
+    }
+
+    .post-media {
+      position: relative;
+    }
+
+    .post-media img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .post-media::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px -16px 18px;
+      height: 28px;
+      background: rgba(17, 17, 17, 0.06);
+      filter: blur(16px);
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    .post-content {
+      padding-right: 8px;
+    }
+
+    .post-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--pg-black);
+      background: linear-gradient(135deg, #efe2b9, #dbc68d);
+      border-radius: 999px;
+    }
+
+    .post-content h2 {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 2.9vw, 3.35rem);
+      line-height: 1.02;
+      color: var(--pg-title);
+      margin-bottom: 18px;
+    }
+
+    .post-excerpt {
+      font-size: 1rem;
+      color: var(--pg-text);
+      margin-bottom: 18px;
+    }
+
+    .post-excerpt p + p {
+      margin-top: 14px;
+    }
+
+    .post-excerpt strong {
+      color: #565c66;
+    }
+
+    .post-list-point {
+      margin-top: 10px;
+      padding-left: 22px;
+    }
+
+    .post-list-point li {
+      margin-bottom: 8px;
+    }
+
+    .post-list-point li::marker {
+      color: var(--pg-gold);
+    }
+
+    .post-footer {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .post-meta {
+      font-size: 0.92rem;
+      color: var(--pg-muted);
+      font-weight: 600;
+    }
+
+    .btn-read {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 170px;
+      padding: 14px 26px;
+      border-radius: 10px;
+      background: #1a56db;
+      color: var(--pg-white);
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      box-shadow: 0 10px 20px rgba(26, 86, 219, 0.28);
+      transition: 0.25s ease;
+    }
+
+    .btn-read:hover {
+      background: #1648c0;
+      transform: translateY(-2px);
+    }
+
+    .posts-grid-section {
+      margin-top: 16px;
+    }
+
+    .section-title-row {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .section-title-row h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--pg-black);
+    }
+
+    .section-title-row p {
+      max-width: 560px;
+      color: var(--pg-muted);
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .post-card {
+      background: var(--pg-white);
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(199, 178, 122, 0.14);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 34px rgba(17, 17, 17, 0.11);
+    }
+
+    .post-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .post-card-body {
+      padding: 22px 22px 24px;
+    }
+
+    .post-card-category {
+      display: inline-block;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--pg-gold);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .post-card h4 {
+      font-size: 1.22rem;
+      line-height: 1.25;
+      color: var(--pg-black);
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .post-card p {
+      color: var(--pg-text);
+      font-size: 0.96rem;
+      margin-bottom: 16px;
+    }
+
+    .post-card a {
+      color: var(--pg-black);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .post-card a:hover {
+      color: var(--pg-gold);
+    }
+
+    .blog-cta {
+      margin-top: 70px;
+    }
+
+    .blog-cta-box {
+      background: linear-gradient(135deg, #000000 0%, #000000 100%);
+      border-radius: 28px;
+      padding: 42px 38px;
+      color: var(--pg-white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .blog-cta-box h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .blog-cta-box p {
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 700px;
+    }
+
+    .blog-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      padding: 14px 24px;
+      border-radius: 10px;
+      background: var(--pg-gold);
+      color: var(--pg-black);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .blog-cta-btn:hover {
+      background: var(--pg-gold-soft);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 1100px) {
+      .post-featured,
+      .post-featured.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .post-featured.reverse .post-media,
+      .post-featured.reverse .post-content {
+        order: initial;
+      }
+
+      .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 820px) {
+      .blog-main {
+        padding: 28px 0 70px;
+      }
+
+      .blog-hero-box {
+        padding: 34px 24px;
+        border-radius: 24px;
+      }
+
+      .blog-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .post-featured {
+        padding: 20px;
+        gap: 24px;
+        border-radius: 22px;
+      }
+
+      .post-content h2 {
+        line-height: 1.04;
+      }
+
+      .section-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .blog-cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 24px;
+      }
+    }
+
+    /* ── Paginación ── */
+    .blog-pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: -30px 0 70px;
+      flex-wrap: wrap;
+    }
+
+    .blog-page-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      height: 44px;
+      padding: 0 18px;
+      border-radius: 10px;
+      border: 1px solid var(--pg-line);
+      background: var(--pg-white);
+      color: var(--pg-black);
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 2px 8px rgba(17,17,17,0.06);
+    }
+
+    .blog-page-btn:hover:not([disabled]) {
+      background: var(--pg-black);
+      color: var(--pg-white);
+      border-color: var(--pg-black);
+      transform: translateY(-1px);
+    }
+
+    .blog-page-btn.active {
+      background: var(--pg-black);
+      color: var(--pg-white);
+      border-color: var(--pg-black);
+    }
+
+    .blog-page-btn[disabled] {
+      opacity: 0.32;
+      cursor: default;
+    }
+
+    @media (max-width: 640px) {
+      .blog-shell {
+        width: min(100% - 24px, var(--container));
+      }
+
+      .blog-hero h1 {
+        font-size: 2rem;
+      }
+
+      .blog-hero p {
+        font-size: 1rem;
+      }
+
+      .posts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .post-content h2 {
+        font-size: 1.9rem;
+      }
+
+      .btn-read,
+      .blog-cta-btn {
+        width: 100%;
+      }
+
+      .post-footer {
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== SINGLE HEADER BAR ===== -->
+  <header class="top-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="header-logo">
+        <img src="Img/logo_petrogold_negro_sin_fondo.png" alt="PetroGold" id="siteLogoImg" />
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+
+          <li><a href="gasolineras.html">Gasolineras</a></li>
+
+          <li class="has-dropdown">
+            <a href="combustibles.html">Combustibles
+              <svg class="nav-arrow" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="combustibles.html">Tipos de combustible</a></li>
+            </ul>
+          </li>
+
+          <li><a href="lavado.html">Lavado</a></li>
+
+          <li class="has-dropdown">
+            <a href="quienes-somos.html">Quiénes somos
+              <svg class="nav-arrow" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="quienes-somos.html">La empresa</a></li>
+            </ul>
+          </li>
+
+          <li><a href="impulso-al-deporte.html">Impulso al deporte</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <button class="hamburger" id="menuToggle" aria-label="Menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a href="quienes-somos.html" class="tienda-btn">Franquíciate</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="blog-main">
+    <div class="blog-shell">
+
+      <section class="blog-hero">
+        <div class="blog-hero-box">
+          <span class="blog-kicker">Actualidad PetroGold</span>
+          <h1>Noticias, alianzas y novedades que mueven nuestra marca</h1>
+          <p>
+            Un espacio para compartir la actualidad de PetroGold, nuestros logros,
+            colaboraciones deportivas y noticias relevantes del sector energético y de la movilidad.
+          </p>
+        </div>
+      </section>
+
+      <section class="featured-posts">
+
+        <!-- 8 Jun 2026 -->
+        <article class="post-featured">
+          <div class="post-media">
+            <img src="Img/07_blog_angel_santos.webp" alt="Ángel Santos y Alejandro Iribas vuelven a reinar en Madrid" />
+          </div>
+          <div class="post-content">
+            <span class="post-label">Motor · Competición</span>
+            <h2>Ángel Santos y Alejandro Iribas vuelven a reinar en Madrid</h2>
+            <div class="post-excerpt">
+              <p>
+                La dupla del Ligier JS2R del equipo <strong>Chefo Sport by PetroGold</strong> fue la que más puntos sumó
+                en el Jarama, tras acabar segunda en la primera carrera y lograr la victoria en la segunda.
+              </p>
+              <p>
+                Este resultado les permite escalar hasta la cuarta posición del campeonato, a solo ocho puntos
+                del liderato, volviendo a meterse de lleno en la pelea tras los problemas de Portimao.
+              </p>
+            </div>
+            <div class="post-footer">
+              <span class="post-meta">8 Jun 2026 · El Periódico Extremadura · 3 min</span>
+              <a href="https://www.elperiodicoextremadura.com/deportes/2026/06/08/angel-santos-alejandro-iribas-vuelven-jarama-circuito-131160437.amp.html" target="_blank" rel="noopener" class="btn-read">Leer noticia</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8 Jun 2026 -->
+        <article class="post-featured reverse">
+          <div class="post-media">
+            <img src="Img/07_blog_angel_santobrillo_extremeño.webp" alt="Brillo extremeño en el Jarama Classic" />
+          </div>
+          <div class="post-content">
+            <span class="post-label">Motor · Supercars España</span>
+            <h2>Brillo extremeño en el Jarama Classic con doblete en la segunda carrera</h2>
+            <div class="post-excerpt">
+              <p>
+                El equipo extremeño firmó un fin de semana para enmarcar en la categoría GTX del
+                Campeonato de España de Supercars, con resultados que sitúan al automovilismo extremeño en el mapa nacional.
+              </p>
+              <p>
+                Los <strong>Ligier JS2R de Chefo Sport by PetroGold</strong> dominaron la categoría GTX en ambas
+                pruebas del fin de semana en el Circuito de Madrid Jarama-RACE.
+              </p>
+            </div>
+            <div class="post-footer">
+              <span class="post-meta">8 Jun 2026 · La Portada de Extremadura · 4 min</span>
+              <a href="https://www.laportadadeextremadura.com/deportes/deportes-extremadura/brillo-extremeno-en-jarama-classic-con-doblete-en-segunda-carrera-del-supercars-espana_5755_102.html" target="_blank" rel="noopener" class="btn-read">Leer noticia</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8 Jun 2026 -->
+        <article class="post-featured">
+          <div class="post-media">
+            <img src="Img/07_blog_angel_santos_2.webp" alt="Santos e Iribas reinan en Madrid - Deportes Extremadura" />
+          </div>
+          <div class="post-content">
+            <span class="post-label">Motor · Jarama</span>
+            <h2>Santos e Iribas: la dupla que más puntos consiguió en Madrid</h2>
+            <div class="post-excerpt">
+              <p>
+                Intenso fin de semana en el circuito del Jarama con las gradas llenas de aficionados.
+                El equipo <strong>Chefo Sport by PetroGold</strong> dominó los entrenamientos libres con
+                sus Ligier en las tres primeras posiciones.
+              </p>
+              <p>
+                Santos e Iribas lograron su primera victoria de la temporada el domingo, liderando
+                la categoría GTX hasta la bandera a cuadros con un ritmo demoledor.
+              </p>
+            </div>
+            <div class="post-footer">
+              <span class="post-meta">8 Jun 2026 · Deportes Extremadura · 3 min</span>
+              <a href="https://deportesextremadura.es/angel-santos-y-alejandro-iribas-vuelven-a-reinar-madrid/" target="_blank" rel="noopener" class="btn-read">Leer noticia</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8 Jun 2026 -->
+        <article class="post-featured reverse">
+          <div class="post-media">
+            <img src="Img/07_blog_sport_motores.webp" alt="Supercars España - Jarama - Sport Motores" />
+          </div>
+          <div class="post-content">
+            <span class="post-label">Motor · Supercars</span>
+            <h2>Caçoilo y Varela ganan en Jarama tras el abandono de Teixeira</h2>
+            <div class="post-excerpt">
+              <p>
+                Gabriel Caçoilo y Máximo Varela se impusieron en la primera carrera del Jarama Classic
+                cuando Daniel Teixeira se vio obligado a abandonar a cuatro vueltas del final.
+              </p>
+              <p>
+                Ángel Santos y Alejandro Iribas completaron el podio en segunda posición, cerrando un
+                histórico resultado para <strong>Chefo Sport by PetroGold</strong> en la categoría GTX.
+              </p>
+            </div>
+            <div class="post-footer">
+              <span class="post-meta">8 Jun 2026 · Sport Motores · 3 min</span>
+              <a href="https://sportmotores.com/portal/!site.go?s=332000000&p=.20055&id=75371" target="_blank" rel="noopener" class="btn-read">Leer noticia</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8 Jun 2026 -->
+        <article class="post-featured">
+          <div class="post-media">
+            <img src="Img/07_blog_varela.webp" alt="SCC Jarama - Euromotor" />
+          </div>
+          <div class="post-content">
+            <span class="post-label">Motor · Análisis</span>
+            <h2>SCC Jarama: crónica completa del fin de semana de Chefo Sport by PetroGold</h2>
+            <div class="post-excerpt">
+              <p>
+                Análisis y crónica completa del fin de semana del Jarama Classic en el Campeonato de España
+                de Supercars, con los pilotos de <strong>Chefo Sport by PetroGold</strong> como protagonistas.
+              </p>
+              <p>
+                Un fin de semana histórico para el automovilismo extremeño que refuerza la posición del
+                equipo en la lucha por el campeonato de la temporada 2026.
+              </p>
+            </div>
+            <div class="post-footer">
+              <span class="post-meta">8 Jun 2026 · Euromotor · 4 min</span>
+              <a href="https://www.euromotor.app/noticias-competicion/c/0/i/96879407/scc-cacoilo-y-varela-ganan-en-jarama-tras-el-abandono-de-teixeira-cuatro-vueltas-del-final" target="_blank" rel="noopener" class="btn-read">Leer noticia</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5 Mar 2026 -->
+        <article class="post-featured reverse">
+          <div class="post-media">
+            <img src="Img/07_blog_kazajoz.webp" alt="Kazajoz PetroGold Extremadura XCO - Diputación de Cáceres" />
+          </div>
+          <div class="post-content">
+            <span class="post-label">Ciclismo · Patrocinio</span>
+            <h2>La Diputación de Cáceres apoya al equipo Kazajoz PetroGold Extremadura XCO</h2>
+            <div class="post-excerpt">
+              <p>
+                La Diputación Provincial de Cáceres respalda al equipo ciclista <strong>Kazajoz PetroGold Extremadura XCO</strong>,
+                primer equipo UCI de MTB Olímpico (XCO) en Extremadura con proyección internacional.
+              </p>
+              <p>
+                El proyecto impulsa una cantera de jóvenes cacereños, con 11 corredores en el equipo nacional
+                y 6 en el equipo UCI, representando el orgullo deportivo extremeño.
+              </p>
+            </div>
+            <div class="post-footer">
+              <span class="post-meta">5 Mar 2026 · Diputación de Cáceres · 3 min</span>
+              <a href="https://www.dip-caceres.es/actualidad/noticias/diputacion-de-caceres-apoya-al-ciclismo-extremeno-de-elite-con-el-patrocinio-del-equipo-kazajoz-petrogold-extremadura-xco/" target="_blank" rel="noopener" class="btn-read">Leer noticia</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ene 2025 -->
+        <article class="post-featured">
+          <div class="post-media">
+            <img src="Img/07_blog_chefo.webp" alt="Chefo Sport by PetroGold" />
+          </div>
+          <div class="post-content">
+            <span class="post-label">Alianza destacada</span>
+            <h2>Chefo Sport se une a PetroGold para impulsar a los pilotos españoles</h2>
+            <div class="post-excerpt">
+              <p>
+                Gran comienzo del año para la estructura madrileña Chefo Sport, que se alía
+                con la empresa extremeña PetroGold para dar forma a <strong>Chefo Sport by PetroGold</strong>.
+              </p>
+              <p>
+                Esta colaboración refuerza el apoyo al talento nacional, acompañando a jóvenes pilotos
+                desde el karting hasta programas internacionales y categorías de mayor proyección.
+              </p>
+            </div>
+            <div class="post-footer">
+              <span class="post-meta">Ene 2025 · Autohebdo Sport · 4 min</span>
+              <a href="https://autohebdosport.com/competicion/circuitos/chefo-sport-by-petrogold-una-alianza-para-impulsar-a-los-pilotos-espanoles" target="_blank" rel="noopener" class="btn-read">Leer noticia</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 1 Sep 2024 -->
+        <article class="post-featured reverse">
+          <div class="post-media">
+            <img src="Img/07_blog_monteblanco.webp" alt="PetroGold y Ángel Santos ganan en Monteblanco" />
+          </div>
+          <div class="post-content">
+            <span class="post-label">Competición</span>
+            <h2>PetroGold y Ángel Santos ganan en Monteblanco</h2>
+            <div class="post-excerpt">
+              <p>
+                Emocionante fin de semana para el piloto extremeño Ángel Santos y su compañero Mikkel Kristensen,
+                firmando un meeting memorable para el equipo en Monteblanco.
+              </p>
+              <p>
+                El resultado consolida una presencia competitiva muy sólida dentro del campeonato y proyecta
+                la imagen de PetroGold en el mundo del motor de alto nivel.
+              </p>
+            </div>
+            <div class="post-footer">
+              <span class="post-meta">1 Sep 2024 · El Periódico Extremadura · 3 min</span>
+              <a href="https://www.elperiodicoextremadura.com/deportes/2024/09/01/angel-santos-mikkel-kristensen-ganan-107627661.html" target="_blank" rel="noopener" class="btn-read">Leer noticia</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 23 Ago 2021 -->
+        <article class="post-featured">
+          <div class="post-media">
+            <img src="Img/07_blog_barata.webp" alt="PetroGold entre las gasolineras más baratas de España" />
+          </div>
+          <div class="post-content">
+            <span class="post-label">Ahorro</span>
+            <h2>PetroGold, entre las estaciones más competitivas de la ruta A66</h2>
+            <div class="post-excerpt">
+              <p>
+                La estación de PetroGold en Mérida destaca por ofrecer una opción especialmente competitiva
+                para quienes viajan por una de las principales rutas del país.
+              </p>
+              <ul class="post-list-point">
+                <li>Ubicación estratégica para conductores habituales y viajeros.</li>
+                <li>Precios muy ajustados en gasolina y diésel.</li>
+                <li>Una propuesta clara de ahorro real para el cliente.</li>
+              </ul>
+            </div>
+            <div class="post-footer">
+              <span class="post-meta">23 Ago 2021 · AS.com · 2 min</span>
+              <a href="https://as.com/diarioas/2021/08/23/actualidad/1629723156_385440.html?fbclid=IwAR0HNQ5tvzbXIRzH9uQrHAM2TLGSda1dfhxrTFdWXFBfDdVe1EntH6Hk-Xw" target="_blank" rel="noopener" class="btn-read">Leer noticia</a>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <div class="blog-pagination" id="blogPagination"></div>
+
+      <section class="blog-cta">
+        <div class="blog-cta-box">
+          <div>
+            <h3>PetroGold sigue creciendo contigo</h3>
+            <p>
+              Nuestro blog es una forma de acercarte la actualidad de la marca, compartir conocimiento útil
+              y reforzar el vínculo con clientes, conductores y aficionados al motor.
+            </p>
+          </div>
+
+          <a href="contacto.html#contactanos" class="blog-cta-btn">Contacta con nosotros</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const ITEMS_PER_PAGE = 3;
+      const articles = Array.from(document.querySelectorAll('.post-featured'));
+      const totalPages = Math.ceil(articles.length / ITEMS_PER_PAGE);
+      const paginationEl = document.getElementById('blogPagination');
+      let currentPage = 1;
+
+      function showPage(page) {
+        currentPage = page;
+        const start = (page - 1) * ITEMS_PER_PAGE;
+        const end = start + ITEMS_PER_PAGE;
+        articles.forEach(function (art, i) {
+          art.style.display = (i >= start && i < end) ? '' : 'none';
+        });
+        renderPagination();
+        document.querySelector('.featured-posts').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function renderPagination() {
+        paginationEl.innerHTML = '';
+
+        // Botón anterior
+        var prev = document.createElement('button');
+        prev.className = 'blog-page-btn';
+        prev.innerHTML = '&#8592; Anterior';
+        prev.disabled = currentPage === 1;
+        prev.addEventListener('click', function () { if (currentPage > 1) showPage(currentPage - 1); });
+        paginationEl.appendChild(prev);
+
+        // Números de página
+        for (var i = 1; i <= totalPages; i++) {
+          (function (num) {
+            var btn = document.createElement('button');
+            btn.className = 'blog-page-btn' + (num === currentPage ? ' active' : '');
+            btn.textContent = num;
+            btn.addEventListener('click', function () { showPage(num); });
+            paginationEl.appendChild(btn);
+          })(i);
+        }
+
+        // Botón siguiente
+        var next = document.createElement('button');
+        next.className = 'blog-page-btn';
+        next.innerHTML = 'Siguiente &#8594;';
+        next.disabled = currentPage === totalPages;
+        next.addEventListener('click', function () { if (currentPage < totalPages) showPage(currentPage + 1); });
+        paginationEl.appendChild(next);
+      }
+
+      showPage(1);
+    })();
+  </script>
+</body>
+</html>
