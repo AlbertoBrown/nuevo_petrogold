@@ -4304,7 +4304,7 @@ body:not(.hero-page) .tienda-btn:hover {
 /* ── 2. Te ofrecemos lo mejor ── */
 .lav-offer-section {
   background: #f8f8f8;
-  padding: 100px 40px;
+  padding: 40px 40px;
 }
 
 .lav-offer-inner {
@@ -4633,7 +4633,7 @@ body:not(.hero-page) .tienda-btn:hover {
 /* ── Galería de Boxes de Lavado ── */
 .lav-boxes-gallery {
   background: #f8f8f8;
-  padding: 72px 40px;
+  padding: 40px 40px;
 }
 
 .lav-gallery-inner {
@@ -4641,9 +4641,6 @@ body:not(.hero-page) .tienda-btn:hover {
   margin: 0 auto;
 }
 
-.lav-gallery-header {
-  margin-bottom: 36px;
-}
 
 .lav-gallery-title {
   font-family: var(--font);
