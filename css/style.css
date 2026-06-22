@@ -337,7 +337,12 @@ body:not(.hero-page) .tienda-btn:hover {
   opacity: 0;
   transition: opacity 0.7s ease;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+}
+
+/* index.html hero: offset from fixed navbar */
+.hero-slider .slide {
+  padding-top: 110px;
 }
 
 .slide.active {
@@ -357,9 +362,8 @@ body:not(.hero-page) .tienda-btn:hover {
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .slide-content {
@@ -404,6 +408,7 @@ body:not(.hero-page) .tienda-btn:hover {
 
 .slide-btn {
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
   gap: 10px;
   background: #fff;
@@ -429,8 +434,8 @@ body:not(.hero-page) .tienda-btn:hover {
 /* Slider controls */
 .slider-controls {
   position: absolute;
-  bottom: 32px;
-  left: clamp(60px, 14vw, 260px);
+  bottom: 52px;
+  left: clamp(80px, 12vw, 220px);
   z-index: 10;
   display: flex;
   align-items: center;
@@ -722,7 +727,7 @@ body:not(.hero-page) .tienda-btn:hover {
 
 .hero-wrapper {
   position: relative;
-  height: 600px;
+  height: 720px;
   overflow: hidden;
 }
 
@@ -1363,7 +1368,7 @@ body:not(.hero-page) .tienda-btn:hover {
   min-height: 240px;
   background-image: url('../Img/01_inicio_blog_2.webp');
   background-size: cover;
-  background-position: center 40%;
+  background-position: center 50%;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -1684,7 +1689,11 @@ body:not(.hero-page) .tienda-btn:hover {
   }
 
   .hero-wrapper {
-    height: 480px;
+    height: 650px;
+  }
+
+  .hero-slider .slide {
+    padding-top: 80px;
   }
 
   .slide-title {
@@ -1698,6 +1707,7 @@ body:not(.hero-page) .tienda-btn:hover {
 
   .slider-controls {
     left: clamp(40px, 8vw, 100px);
+    bottom: 44px;
   }
 }
 
@@ -1824,7 +1834,11 @@ body:not(.hero-page) .tienda-btn:hover {
 
   /* Hero */
   .hero-wrapper {
-    height: 420px;
+    height: 560px;
+  }
+
+  .hero-slider .slide {
+    padding-top: 88px;
   }
 
   .slide-content {
@@ -1851,8 +1865,8 @@ body:not(.hero-page) .tienda-btn:hover {
   }
 
   .slider-controls {
-    left: 32px;
-    bottom: 20px;
+    left: 24px;
+    bottom: 36px;
   }
 
   .petrogold-location-item {
@@ -1870,7 +1884,19 @@ body:not(.hero-page) .tienda-btn:hover {
   }
 
   .slider-controls {
-    left: 260px;
+    left: 220px;
+  }
+
+  .hero-wrapper {
+    height: 700px;
+  }
+
+  .hero-slider .slide {
+    padding-top: 80px;
+  }
+
+  .slider-controls {
+    bottom: 30px;
   }
 }
 
@@ -1961,7 +1987,7 @@ body:not(.hero-page) .tienda-btn:hover {
 @media (max-width: 480px) {
 
   .hero-wrapper {
-    height: 360px;
+    height: 500px;
   }
 
   .slide-title {
@@ -1978,8 +2004,8 @@ body:not(.hero-page) .tienda-btn:hover {
   }
 
   .slider-controls {
-    left: 20px;
-    bottom: 16px;
+    left: 16px;
+    bottom: 28px;
     gap: 6px;
   }
 
@@ -2105,6 +2131,18 @@ body:not(.hero-page) .tienda-btn:hover {
 }
 
 /* ── Sport section responsive ── */
+@media (min-width: 1024px) {
+  .sport-section {
+    background-position: 55% 50%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .sport-section {
+    background-position: 60% 50%;
+  }
+}
+
 @media (max-width: 768px) {
   .sport-section {
     min-height: 200px;
@@ -2496,7 +2534,7 @@ body:not(.hero-page) .tienda-btn:hover {
   z-index: 2;
   margin-left: clamp(80px, 12vw, 220px);
   width: min(55%, 680px);
-  background: rgba(20, 30, 45, 0.58);
+  background: rgba(20, 30, 45, 0.38);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -2528,7 +2566,7 @@ body:not(.hero-page) .tienda-btn:hover {
 
 .hero-pg-text {
   font-family: var(--font);
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.88);
   line-height: 1.7;
@@ -2639,6 +2677,60 @@ body:not(.hero-page) .tienda-btn:hover {
   .hero-pg-btn {
     justify-content: center;
     padding: 13px 20px;
+  }
+}
+
+/* hero-pg-card dentro del hero slider (index.html) */
+.hero-slider .hero-pg-card .slide-btn {
+  margin-top: 14px;
+}
+
+@media (max-width: 1024px) {
+  .hero-slider .hero-pg-card {
+    margin-left: clamp(40px, 8vw, 100px);
+    width: min(72%, 560px);
+    padding: 32px 28px;
+  }
+  .hero-slider .hero-pg-card .slide-title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slider .hero-pg-card {
+    width: min(70%, 420px);
+    margin: 0 0 0 24px;
+    padding: 24px 20px;
+    border-radius: 16px;
+    gap: 14px;
+  }
+  .hero-slider .hero-pg-card .slide-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .hero-slider .hero-pg-card .slide-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .hero-slider .hero-pg-card .slide-subtitle {
+    font-size: 14px;
+    margin-bottom: 14px;
+    margin-top: -8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slider .hero-pg-card {
+    width: min(82%, 380px);
+    margin: 0 0 0 16px;
+    padding: 20px 16px;
+    border-radius: 14px;
+    gap: 12px;
+  }
+  .hero-slider .hero-pg-card .slide-title {
+    font-size: 18px;
+    margin-bottom: 12px;
   }
 }
 
@@ -3427,7 +3519,7 @@ body:not(.hero-page) .tienda-btn:hover {
 
 .comb-hero-subtitle {
   font-family: var(--font);
-  font-size: 17px;
+  font-size: 20px;
   color: rgba(255,255,255,0.78);
   line-height: 1.65;
   max-width: 480px;
@@ -4134,9 +4226,9 @@ body:not(.hero-page) .tienda-btn:hover {
 
 .lav-hero-subtitle {
   font-family: var(--font);
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 400;
-  color: rgba(255,255,255,0.82);
+  color: rgba(255,255,255,1);
   line-height: 1.75;
   max-width: 520px;
   animation: lav-fade-up 0.75s ease both;
@@ -4538,6 +4630,212 @@ body:not(.hero-page) .tienda-btn:hover {
 }
 
 
+/* ── Galería de Boxes de Lavado ── */
+.lav-boxes-gallery {
+  background: #f8f8f8;
+  padding: 72px 40px;
+}
+
+.lav-gallery-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.lav-gallery-header {
+  margin-bottom: 36px;
+}
+
+.lav-gallery-title {
+  font-family: var(--font);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.lav-gallery-subtitle {
+  font-size: 1rem;
+  color: #666;
+  max-width: 620px;
+}
+
+.lav-carousel-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lav-car-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--border, #e0e0e0);
+  background: #fff;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.22s, border-color 0.22s, color 0.22s;
+}
+
+.lav-car-arrow:hover {
+  background: var(--gold, #C9A227);
+  border-color: var(--gold, #C9A227);
+  color: #fff;
+}
+
+.lav-car-arrow:disabled {
+  cursor: default;
+}
+
+.lav-carousel-track-wrap {
+  flex: 1;
+  overflow: hidden;
+}
+
+.lav-carousel-track {
+  display: flex;
+  gap: 14px;
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lav-car-thumb {
+  flex: 0 0 calc(20% - 11.2px);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.lav-car-thumb img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.lav-car-thumb:hover img {
+  transform: scale(1.05);
+}
+
+.lav-car-thumb:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+.lav-car-thumb.active {
+  border-color: var(--gold, #C9A227);
+  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.3);
+}
+
+/* ── Lightbox ── */
+.lav-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lav-lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lav-lb-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.lav-lb-img-wrap img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.22s ease;
+  display: block;
+}
+
+.lav-lb-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 1;
+}
+
+.lav-lb-close:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.lav-lb-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.22s, border-color 0.22s;
+  z-index: 1;
+}
+
+.lav-lb-prev { left: 20px; }
+.lav-lb-next { right: 20px; }
+
+.lav-lb-arrow:hover {
+  background: var(--gold, #C9A227);
+  border-color: var(--gold, #C9A227);
+}
+
+.lav-lb-counter {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--font, 'Manrope', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .lav-lb-arrow { width: 40px; height: 40px; }
+  .lav-lb-prev { left: 10px; }
+  .lav-lb-next { right: 10px; }
+}
+
+
 /* ── 5. CTA Revolución en Lavado ── */
 .lav-cta-section {
   position: relative;
@@ -4754,10 +5052,11 @@ body:not(.hero-page) .tienda-btn:hover {
     width: 100%;
     min-height: 52px;
   }
+
+  /* Gallery */
+  .lav-boxes-gallery { padding: 60px 24px; }
+  .lav-car-thumb { flex: 0 0 calc(25% - 10.5px); }
 }
-
-
-/* ── LAV Responsive: Mobile ≤ 768px ── */
 @media (max-width: 768px) {
 
   /* Prevent any horizontal overflow */
@@ -4844,6 +5143,11 @@ body:not(.hero-page) .tienda-btn:hover {
   }
 
   .lav-cta-btns { gap: 12px; }
+
+  /* Gallery */
+  .lav-boxes-gallery { padding: 48px 16px; }
+  .lav-car-thumb { flex: 0 0 calc(33.333% - 9.4px); }
+  .lav-car-arrow { width: 38px; height: 38px; }
 }
 
 
@@ -4886,6 +5190,11 @@ body:not(.hero-page) .tienda-btn:hover {
 
   /* Quote block */
   .lav-quote-block { padding: 20px 16px 20px 14px; }
+
+  /* Gallery */
+  .lav-boxes-gallery { padding: 36px 12px; }
+  .lav-car-thumb { flex: 0 0 calc(50% - 7px); }
+  .lav-car-arrow { width: 34px; height: 34px; }
 }
 
 
@@ -6197,6 +6506,40 @@ body.impulso-page {
 /* ── Colaboradores logos ── */
 .id-section--colabs {
   padding-top: 20;
+}
+
+/* ── Ambassadors wrapper: premium card layout ── */
+.id-ambassadors-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 0 clamp(20px, 5vw, 80px) 72px;
+}
+
+.id-ambassadors-wrap .id-testimony {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(30, 80, 160, 0.28);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.55),
+    0 2px 8px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 0.32s ease, box-shadow 0.32s ease;
+}
+
+.id-ambassadors-wrap .id-testimony:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 22px 64px rgba(0, 0, 0, 0.65),
+    0 4px 16px rgba(30, 80, 160, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .id-ambassadors-wrap { gap: 22px; padding: 0 16px 56px; }
+}
+@media (max-width: 480px) {
+  .id-ambassadors-wrap { gap: 16px; padding: 0 10px 44px; }
 }
 
 .id-colabs-inner {
@@ -7869,8 +8212,8 @@ body.impulso-page {
 }
 
 .pgqs-hero-sub {
-  font-size: clamp(14px, 1.6vw, 17px);
-  color: rgba(255,255,255,0.82);
+  font-size: clamp(20px, 1.7vw, 20px);
+  color: rgba(255,255,255,1);
   line-height: 1.65;
   max-width: 520px;
   margin: 0;
@@ -8021,6 +8364,25 @@ body.impulso-page {
   transition: background 0.25s, color 0.25s, border-color 0.25s;
 }
 .pgqs-tl-item:hover .pgqs-tl-icon { background: var(--gold); color: #fff; }
+
+.pgqs-tl-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0A2E73;
+  color: #fff;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 2px solid #fff;
+}
 
 .pgqs-tl-year { font-family: var(--font); font-size: 18px; font-weight: 800; color: #0A2E73; margin-bottom: 8px; }
 .pgqs-tl-text { font-family: var(--font); font-size: 13px; color: #5a6475; line-height: 1.55; margin: 0; }
